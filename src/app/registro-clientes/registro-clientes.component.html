@@ -1,0 +1,40 @@
+<!-- registro-clientes.component.html -->
+
+<div>
+  <h2>Registro de Clientes</h2>
+
+  <!-- Muestra el token generado-->
+  <div>
+    <label for="nombre">Token:</label>
+    <input type="text" id="token" name="token" [(ngModel)]="nuevoCliente.Token" required>
+  </div>
+
+  <!-- Formulario de registro de clientes -->
+  <form (ngSubmit)="registrarCliente()"  #clienteForm="ngForm">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoCliente.Nombre" required>
+    </div>
+
+    <div>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" [(ngModel)]="nuevoCliente.Apellido" required>
+    </div>
+
+    <div>
+      <label for="correoElectronico">Correo Electrónico:</label>
+      <input type="email" id="correoElectronico" name="correoElectronico" [(ngModel)]="nuevoCliente.CorreoElectronico" required>
+    </div>
+
+    <button type="submit">Registrar Cliente</button>
+  </form>
+</div>
+
+
+<h1>Listado de Héroes</h1>
+<div class="grid bm-8 pt-2">
+
+<app-lista-clientes [clientes]="clientes"></app-lista-clientes>
+
+
+</div>
